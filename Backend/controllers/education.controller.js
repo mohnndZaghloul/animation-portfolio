@@ -1,7 +1,5 @@
 const fs = require("node:fs");
-let education = JSON.parse(
-  fs.readFileSync("./Backend/data/education.json", "utf-8")
-);
+let education = JSON.parse(fs.readFileSync("./data/education.json", "utf-8"));
 
 const { validationResult } = require("express-validator");
 
@@ -29,7 +27,7 @@ const addEducation = (req, res) => {
   }
   //create and push
   education.push({ id: education.length + 1, ...req.body });
-  fs.writeFileSync("./Backend/data/education.json", JSON.stringify(education));
+  fs.writeFileSync("./data/education.json", JSON.stringify(education));
   res.status(201).json({ status: "success", data: [...education] });
 };
 
@@ -44,7 +42,7 @@ const updateEducation = (req, res) => {
   }
 
   education[index] = { ...education[index], ...req.body };
-  fs.writeFileSync("./Backend/data/education.json", JSON.stringify(education));
+  fs.writeFileSync("./data/education.json", JSON.stringify(education));
 
   res.status(200).json({ status: "success", data: [...education] });
 };
@@ -57,7 +55,7 @@ const deleteEducation = (req, res) => {
       .json({ status: "error", data: null, msg: "Not Found" });
   }
   education = education.filter((edu) => edu.id !== id);
-  fs.writeFileSync("./Backend/data/education.json", JSON.stringify(education));
+  fs.writeFileSync("./data/education.json", JSON.stringify(education));
 
   res.status(200).json({ status: "success", data: [...education] });
 };
