@@ -1,12 +1,1 @@
-[
-  {
-    "id": 1,
-    "period": "SEP2020-JUN2022",
-    "description": "Master Degree In Interior Architecture Higher Institute Of Fine Arts Of Sousse"
-  },
-  {
-    "id": 2,
-    "period": "SEP2017-JUN2020",
-    "description": "Bachelors/License Of Interior Architecture Higher Institute Of Fine Arts Of Sousse"
-  }
-]
+[{"id":1,"period":"SEP2020-JUN2022","description":"Master Degree In Interior Architecture Higher Institute Of Fine Arts Of Sousse"},{"id":2,"period":"SEP2017-JUN2020","description":"Bachelors/License Of Interior Architecture Higher Institute Of Fine Arts Of Sousse"}]
