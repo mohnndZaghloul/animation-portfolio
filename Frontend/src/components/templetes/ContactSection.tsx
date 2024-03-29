@@ -19,9 +19,11 @@ const ContactSection = () => {
   const [contacts, setContacts] = useState<contacts_TP>();
 
   useEffect(() => {
-    axios.get("http://localhost:5050/api/contacts").then((response) => {
-      setContacts(response.data.data);
-    });
+    axios
+      .get("https://animation-portfolio.onrender.com/api/contacts")
+      .then((response) => {
+        setContacts(response.data.data);
+      });
   }, []);
 
   return (
