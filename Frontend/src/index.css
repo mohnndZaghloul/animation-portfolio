@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section_padding {
+    @apply py-12;
+  }
+  .gradient_text {
+    @apply w-fit mx-auto bg-gradient-to-r from-primary to-Secondary bg-clip-text text-transparent capitalize font-bold;
+  }
+  .moving_li {
+    @apply w-fit text-2xl md:text-4xl lg:text-6xl font-bold tracking-wide bg-gradient-to-r from-primary to-Secondary bg-clip-text text-transparent even:text-white even:ms-auto pb-4;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.modal-open {
+  overflow-y: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #45b9d0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cf2374;
+}
