@@ -23,10 +23,10 @@ const ExperienceSection = () => {
   const [experience, setExperience] = useState<experience_TP>();
 
   useEffect(() => {
-    axios.get("http://localhost:5050/api/education").then((response) => {
+    axios.get("/api/education").then((response) => {
       setEducation(response.data.data);
     });
-    axios.get("http://localhost:5050/api/experience").then((response) => {
+    axios.get("api/experience").then((response) => {
       setExperience(response.data.data);
     });
   }, []);
