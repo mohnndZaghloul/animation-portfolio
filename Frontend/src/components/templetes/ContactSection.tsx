@@ -7,6 +7,7 @@ import Shadow from "../ui/Shadow";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../../constants/baseURL";
 
 type contacts_TP = {
   instagram: string;
@@ -19,11 +20,9 @@ const ContactSection = () => {
   const [contacts, setContacts] = useState<contacts_TP>();
 
   useEffect(() => {
-    axios
-      .get("https://animation-portfolio.onrender.com/api/contacts")
-      .then((response) => {
-        setContacts(response.data.data);
-      });
+    axios.get(`${BASE_URL}/api/contacts`).then((response) => {
+      setContacts(response.data.data);
+    });
   }, []);
 
   return (

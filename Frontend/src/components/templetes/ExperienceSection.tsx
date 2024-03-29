@@ -3,6 +3,7 @@ import profile from "../../assets/profile.png";
 import Shadow from "../ui/Shadow";
 import { motion, useScroll, useTransform } from "framer-motion";
 import axios from "axios";
+import { BASE_URL } from "../../constants/baseURL";
 
 type education_TP = {
   id: number;
@@ -23,16 +24,12 @@ const ExperienceSection = () => {
   const [experience, setExperience] = useState<experience_TP>();
 
   useEffect(() => {
-    axios
-      .get("https://animation-portfolio.onrender.com/api/education")
-      .then((response) => {
-        setEducation(response.data.data);
-      });
-    axios
-      .get("https://animation-portfolio.onrender.com/api/experience")
-      .then((response) => {
-        setExperience(response.data.data);
-      });
+    axios.get(`${BASE_URL}/api/education`).then((response) => {
+      setEducation(response.data.data);
+    });
+    axios.get(`${BASE_URL}/api/experience`).then((response) => {
+      setExperience(response.data.data);
+    });
   }, []);
 
   const ref = useRef<HTMLElement>(null);

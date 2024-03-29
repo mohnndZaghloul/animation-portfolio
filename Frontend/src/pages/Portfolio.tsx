@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import axios from "axios";
+import { BASE_URL } from "../constants/baseURL";
 
 type projects_TP = {
   id: number;
@@ -18,7 +19,7 @@ const Portfolio = () => {
   const [projects, setProjects] = useState<projects_TP>();
   const fetchPortfolio = () => {
     axios
-      .get("https://animation-portfolio.onrender.com/api/portfolio")
+      .get(`${BASE_URL}/api/portfolio`)
       .then((response): any => {
         setProjects(response.data.data);
       });
