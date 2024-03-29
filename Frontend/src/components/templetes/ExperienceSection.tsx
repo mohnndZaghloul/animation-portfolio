@@ -23,12 +23,16 @@ const ExperienceSection = () => {
   const [experience, setExperience] = useState<experience_TP>();
 
   useEffect(() => {
-    axios.get("/api/education").then((response) => {
-      setEducation(response.data.data);
-    });
-    axios.get("api/experience").then((response) => {
-      setExperience(response.data.data);
-    });
+    axios
+      .get("https://animation-portfolio.onrender.com/api/education")
+      .then((response) => {
+        setEducation(response.data.data);
+      });
+    axios
+      .get("https://animation-portfolio.onrender.com/api/experience")
+      .then((response) => {
+        setExperience(response.data.data);
+      });
   }, []);
 
   const ref = useRef<HTMLElement>(null);

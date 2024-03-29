@@ -17,9 +17,11 @@ type projects_TP = {
 const Portfolio = () => {
   const [projects, setProjects] = useState<projects_TP>();
   const fetchPortfolio = () => {
-    axios.get("http://localhost:5050/api/portfolio").then((response): any => {
-      setProjects(response.data.data);
-    });
+    axios
+      .get("https://animation-portfolio.onrender.com/api/portfolio")
+      .then((response): any => {
+        setProjects(response.data.data);
+      });
   };
 
   useEffect(() => {
