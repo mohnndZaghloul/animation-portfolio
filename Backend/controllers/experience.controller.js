@@ -1,7 +1,5 @@
 const fs = require("node:fs");
-let experience = JSON.parse(
-  fs.readFileSync("./Backend/data/experience.json", "utf-8")
-);
+let experience = JSON.parse(fs.readFileSync("./data/experience.json", "utf-8"));
 
 const { validationResult } = require("express-validator");
 
@@ -29,10 +27,7 @@ const addExperience = (req, res) => {
   }
   //create and push
   experience.push({ id: experience.length + 1, ...req.body });
-  fs.writeFileSync(
-    "./Backend/data/experience.json",
-    JSON.stringify(experience)
-  );
+  fs.writeFileSync("./data/experience.json", JSON.stringify(experience));
   res.status(201).json({
     status: "success",
     data: { experience },
@@ -51,10 +46,7 @@ const updateExperience = (req, res) => {
   }
 
   experience[index] = { ...experience[index], ...req.body };
-  fs.writeFileSync(
-    "./Backend/data/experience.json",
-    JSON.stringify(experience)
-  );
+  fs.writeFileSync("./data/experience.json", JSON.stringify(experience));
 
   res.status(200).json({ status: "success", data: [...experience] });
 };
@@ -67,10 +59,7 @@ const deleteExperience = (req, res) => {
       .json({ status: "error", data: null, msg: "Not Found" });
   }
   experience = experience.filter((edu) => edu.id !== id);
-  fs.writeFileSync(
-    "./Backend/data/experience.json",
-    JSON.stringify(experience)
-  );
+  fs.writeFileSync("./data/experience.json", JSON.stringify(experience));
 
   res.status(200).json({ status: "success", data: [...experience] });
 };

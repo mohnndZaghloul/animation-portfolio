@@ -1,7 +1,5 @@
 const fs = require("node:fs");
-let portfolio = JSON.parse(
-  fs.readFileSync("./Backend/data/portfolio.json", "utf-8")
-);
+let portfolio = JSON.parse(fs.readFileSync("./data/portfolio.json", "utf-8"));
 
 const { validationResult } = require("express-validator");
 
@@ -35,7 +33,7 @@ const addPortfolio = async (req, res) => {
 
   //create and push
   portfolio.push({ id: portfolio.length + 1, ...req.body, images: req.files });
-  fs.writeFileSync("./Backend/data/portfolio.json", JSON.stringify(portfolio));
+  fs.writeFileSync("./data/portfolio.json", JSON.stringify(portfolio));
   res.status(201).json({
     status: "success",
     data: [...portfolio],
@@ -59,7 +57,7 @@ const updatePortfolio = (req, res) => {
   }
 
   portfolio[index] = { ...portfolio[index], ...req.body, images: req.files };
-  fs.writeFileSync("./Backend/data/portfolio.json", JSON.stringify(portfolio));
+  fs.writeFileSync("./data/portfolio.json", JSON.stringify(portfolio));
 
   res.status(200).json({ status: "success", data: [...portfolio] });
 };
@@ -72,7 +70,7 @@ const deletePortfolio = (req, res) => {
       .json({ status: "error", data: null, msg: "Not Found" });
   }
   portfolio = portfolio.filter((edu) => edu.id !== id);
-  fs.writeFileSync("./Backend/data/portfolio.json", JSON.stringify(portfolio));
+  fs.writeFileSync("./data/portfolio.json", JSON.stringify(portfolio));
 
   res.status(200).json({ status: "success", data: [...portfolio] });
 };
