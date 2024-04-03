@@ -19,6 +19,14 @@ app.use("/api/contacts", contactsRouter);
 app.use("/api/experience", experienceRouter);
 app.use("/api/portfolio", portfolioRouter);
 
-app.listen(process.env.PORT || 5050, () => {
-  console.log("listening on port : 5050");
+// Serve static files from the 'build' directory
+app.use(express.static(path.join(__dirname, "../public_html")));
+
+// Define a route handler for all routes (catch-all route)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public_html", "index.html"));
+});
+
+app.listen(process.env.PORT || 5000, () => {
+  console.log("listening on port : 5000");
 });

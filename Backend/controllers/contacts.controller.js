@@ -16,7 +16,6 @@ const findContacts = (req, res) => {
 };
 
 const updateContacts = (req, res) => {
-  console.log(req.body.whatsapp);
   contacts = { ...contacts, ...req.body };
   fs.writeFileSync("./data/contacts.json", JSON.stringify(contacts));
 

@@ -32,7 +32,11 @@ const addPortfolio = async (req, res) => {
   }
 
   //create and push
-  portfolio.push({ id: portfolio.length + 1, ...req.body, images: req.files });
+  portfolio.unshift({
+    id: portfolio.length + 1,
+    ...req.body,
+    images: req.files,
+  });
   fs.writeFileSync("./data/portfolio.json", JSON.stringify(portfolio));
   res.status(201).json({
     status: "success",
@@ -56,6 +60,7 @@ const updatePortfolio = (req, res) => {
       .json({ status: "fail", error: "at least upload one image" });
   }
 
+  const images = portfolio[index].images
   portfolio[index] = { ...portfolio[index], ...req.body, images: req.files };
   fs.writeFileSync("./data/portfolio.json", JSON.stringify(portfolio));
 

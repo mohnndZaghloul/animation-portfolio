@@ -26,7 +26,7 @@ const addEducation = (req, res) => {
     return res.status(401).json({ status: "fail", errors });
   }
   //create and push
-  education.push({ id: education.length + 1, ...req.body });
+  education.unshift({ id: education.length + 1, ...req.body });
   fs.writeFileSync("./data/education.json", JSON.stringify(education));
   res.status(201).json({ status: "success", data: [...education] });
 };

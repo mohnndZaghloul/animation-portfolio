@@ -26,7 +26,7 @@ const addExperience = (req, res) => {
     return res.status(401).json({ status: "fail", errors });
   }
   //create and push
-  experience.push({ id: experience.length + 1, ...req.body });
+  experience.unshift({ id: experience.length + 1, ...req.body });
   fs.writeFileSync("./data/experience.json", JSON.stringify(experience));
   res.status(201).json({
     status: "success",

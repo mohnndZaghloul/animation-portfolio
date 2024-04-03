@@ -8,6 +8,7 @@ type projects_TP = {
   title: string;
   images: {
     fieldname: string;
+    mimetype: string;
     originalname: string;
     filename: string;
     path: string;
@@ -18,11 +19,9 @@ type projects_TP = {
 const Portfolio = () => {
   const [projects, setProjects] = useState<projects_TP>();
   const fetchPortfolio = () => {
-    axios
-      .get(`${BASE_URL}/api/portfolio`)
-      .then((response): any => {
-        setProjects(response.data.data);
-      });
+    axios.get(`${BASE_URL}/api/portfolio`).then((response): any => {
+      setProjects(response.data.data);
+    });
   };
 
   useEffect(() => {

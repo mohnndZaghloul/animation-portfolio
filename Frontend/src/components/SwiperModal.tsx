@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { BASE_URL } from "../constants/baseURL";
 
 type image_TP = {
   fieldname: string;
@@ -59,10 +60,28 @@ const SwiperModal = ({
               className="mySwiper2 h-[80%] pb-2">
               {images?.map((img) => (
                 <SwiperSlide key={img}>
-                  <img
-                    className="object-cover h-full mx-auto"
-                    src={`http://localhost:5050/${img?.filename}`}
-                  />
+                  {img.mimetype.includes("video") ? (
+                    <video
+                      className="object-cover h-full mx-auto"
+                      autoPlay
+                      muted
+                      loop>
+                      <source
+                        src={`${BASE_URL}/${images?.[0].filename}`}
+                        type="video/mp4"
+                      />
+                      <source
+                        src={`${BASE_URL}/${images?.[0].filename}`}
+                        type="video/ogg"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <img
+                      className="object-cover h-full mx-auto"
+                      src={`${BASE_URL}/${img?.filename}`}
+                    />
+                  )}
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -76,10 +95,28 @@ const SwiperModal = ({
               className="mySwiper h-[20%]">
               {images?.map((img) => (
                 <SwiperSlide key={img}>
-                  <img
-                    className="object-cover h-full w-full"
-                    src={`http://localhost:5050/${img?.filename}`}
-                  />
+                  {img.mimetype.includes("video") ? (
+                    <video
+                      className="object-cover h-full w-full"
+                      autoPlay
+                      muted
+                      loop>
+                      <source
+                        src={`${BASE_URL}/${images?.[0].filename}`}
+                        type="video/mp4"
+                      />
+                      <source
+                        src={`${BASE_URL}/${images?.[0].filename}`}
+                        type="video/ogg"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <img
+                      className="object-cover h-full w-full"
+                      src={`${BASE_URL}/${img?.filename}`}
+                    />
+                  )}
                 </SwiperSlide>
               ))}
             </Swiper>
