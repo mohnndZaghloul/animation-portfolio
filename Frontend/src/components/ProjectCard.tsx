@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import SwiperModal from "./SwiperModal";
 import { useState } from "react";
 import { BASE_URL } from "../constants/baseURL";
+import { useNavigate } from "react-router-dom";
 
 type image_TP = {
   fieldname: string;
@@ -12,21 +13,29 @@ type image_TP = {
   size: number;
 };
 const ProjectCard = ({
-  images,
+  id,
   title,
+  images,
 }: {
-  images?: image_TP[];
+  id: number;
   title: string;
+  images?: image_TP[];
 }) => {
   const [modal, setModal] = useState(false);
   const modalToggler = () => {
     setModal((prev) => !prev);
   };
 
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate(`${id}`);
+  }
+
   return (
     <>
       <motion.div
-        onClick={modalToggler}
+        onClick={handleClick}
         initial={{ scale: 0.9, opacity: 0 - 4 }}
         whileTap={{ scale: 0.95 }}
         whileInView={{ scale: 1, opacity: 1, transition: { duration: 0.5 } }}
