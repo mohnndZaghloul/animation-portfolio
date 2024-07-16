@@ -42,35 +42,69 @@ const Nav = () => {
           <img className="w-16 p-2" src={Logo} alt="logo" />
         </Link>
         <ul className="capitalize hidden text-lg sm:flex items-center space-x-8">
-          <li className="bg-gradient-to-r from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r from-primary to-Secondary bg-clip-text hover:text-transparent transition">
             <HashLink to="/#about">about me</HashLink>
           </li>
-          <li className="bg-gradient-to-r from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r from-primary to-Secondary bg-clip-text hover:text-transparent transition">
             <Link to="/portfolio">portfolio</Link>
           </li>
-          <li className="bg-gradient-to-r from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+            <Link to="/courses">courses</Link>
+          </li>
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r from-primary to-Secondary bg-clip-text hover:text-transparent transition">
             <HashLink to="/#contacts">contact</HashLink>
           </li>
         </ul>
-        <div className="sm:hidden">
-          <img
-            onClick={() => setMenu(!menu)}
-            src={navMenu}
-            className="w-12 h-12 invert active:rotate-90 transition"
-            alt="nav menu"
-          />
+        <div
+          onClick={() => setMenu(!menu)}
+          className="relative sm:hidden w-12 h-8 flex flex-col justify-between">
+          <span
+            className={`block rounded-lg w-full h-1 ${
+              menu
+                ? "-rotate-45 translate-y-[400%] absolute bg-primary"
+                : "bg-white"
+            } transition duration-500`}></span>
+          <span
+            className={`block rounded-lg w-full h-1 ${
+              menu ? "opacity-0" : "bg-white"
+            } transition duration-500`}></span>
+          <span
+            className={`block rounded-lg w-full h-1 ${
+              menu
+                ? "rotate-45 translate-y-[400%] absolute bg-primary"
+                : "bg-white"
+            } transition duration-500`}></span>
         </div>
         <ul
           className={`${
             menu ? "" : "translate-x-full"
-          } capitalize divide-y-2 divide-gray-600 fixed right-0 top-20 w-1/2 bg-black text-center sm:hidden transition`}>
-          <li className="bg-gradient-to-r py-5 from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+          } capitalize divide-y divide-gray-600 fixed right-0 top-20 w-full h-full bg-black bg-opacity-70 text-center sm:hidden duration-500 transition`}>
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r py-5 from-primary to-Secondary bg-clip-text hover:text-transparent transition">
             <HashLink to="/#about">about me</HashLink>
           </li>
-          <li className="bg-gradient-to-r py-5 from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r py-5 from-primary to-Secondary bg-clip-text hover:text-transparent transition">
             <Link to="/portfolio">portfolio</Link>
           </li>
-          <li className="bg-gradient-to-r py-5 from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r py-5 from-primary to-Secondary bg-clip-text hover:text-transparent transition">
+            <HashLink to="/courses">courses</HashLink>
+          </li>
+          <li
+            onClick={() => setMenu(false)}
+            className="bg-gradient-to-r py-5 from-primary to-Secondary bg-clip-text hover:text-transparent transition">
             <HashLink to="/#contacts">contact</HashLink>
           </li>
         </ul>

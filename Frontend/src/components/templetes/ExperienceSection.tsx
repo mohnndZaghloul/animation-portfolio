@@ -73,7 +73,7 @@ const ExperienceSection = () => {
       <div className="pt-32 flex flex-col md:flex-row justify-between lg:container">
         <motion.div
           style={{ opacity: opacityImg, x: XImg, y: yImg }}
-          className="w-full ps-20 sm:ps-12 lg:ps-0 md:w-1/2 h-full xl:max-w-[35%] md:sticky top-[5vh]">
+          className="w-full sm:w-2/3 mx-auto ps-20 sm:ps-12 lg:ps-0 md:w-1/2 h-full xl:max-w-[35%] md:sticky top-[5vh]">
           <div className="relative">
             <img className="w-full h-full px-12" src={profile} alt="profile" />
             <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-black" />

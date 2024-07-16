@@ -48,7 +48,7 @@ const FirstSection = () => {
           "We are artists before an interior architects."
         </motion.p>
       </div>
-      <div className="relative w-full lg:w-[60%] h-[50vh] sm:h-[100vh] lg:h-full z-50">
+      <div className="relative w-full lg:w-[60%] h-[70vh] sm:h-[100vh] lg:h-full z-50">
         <div className="w-[14rem] sm:w-[22rem] aspect-auto absolute top-1/4 -translate-y-1/4 lg:top-1/2 lg:-translate-y-3/4 lg:left-1/3 lg:-translate-x-1/2 z-30">
           <div className="relative overflow-hidden">
             <img src={IMG2} className="p-1" alt="image1" />
@@ -71,7 +71,7 @@ const FirstSection = () => {
 
           <div />
         </div>
-        <div className="w-[20rem] sm:w-[30rem] aspect-auto absolute top-1/2 translate-y-1/4 lg:top-3/4 lg:-translate-y-[45%] lg:left-1/3 lg:-translate-x-[45%] z-10">
+        <div className="w-[20rem] sm:w-[30rem] aspect-auto absolute top-1/2 translate-y-1/3 lg:top-3/4 lg:-translate-y-[45%] lg:left-1/3 lg:-translate-x-[45%] z-10">
           <div className="relative overflow-hidden">
             <video autoPlay muted loop>
               <source src={VID1} type="video/mp4" />
