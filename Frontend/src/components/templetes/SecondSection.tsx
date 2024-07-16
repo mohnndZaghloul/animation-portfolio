@@ -23,7 +23,7 @@ const SecondSection = () => {
 
   return (
     <section ref={ref} className="container py-40">
-      <div className="h-screen lg:h-[250vh]">
+      <div className="lg:h-[250vh]">
         <div className="sticky top-[30vh] md:top-[15vh]">
           <div className="flex justify-between lg:px-4 relative">
             <div className="w-3/4 md:w-[40%] relative overflow-hidden -translate-y-20">

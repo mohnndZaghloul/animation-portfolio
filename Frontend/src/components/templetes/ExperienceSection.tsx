@@ -39,10 +39,10 @@ const ExperienceSection = () => {
     offset: ["0 1", "1 1"],
   });
 
-  const opacityImg = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
+  const opacityImg = useTransform(scrollYProgress, [0.15, 0.25], [0, 1]);
   // const XImg = useTransform(scrollYProgress, [0.1, 0.4], [-90, 0]);
-  const XImg = useTransform(scrollYProgress, [0.1, 0.4], ["-50%", "-10%"]);
-  const yImg = useTransform(scrollYProgress, [0.1, 0.4], [-200, 0]);
+  const XImg = useTransform(scrollYProgress, [0.1, 0.25], ["-50%", "-10%"]);
+  const yImg = useTransform(scrollYProgress, [0.1, 0.25], [-200, 0]);
   const spanWidth = useTransform(scrollYProgress, [0.1, 0.45], ["50%", "0%"]);
   const spanHeight = useTransform(scrollYProgress, [0.2, 0.8], ["5%", "80%"]);
 

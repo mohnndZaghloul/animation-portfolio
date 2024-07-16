@@ -13,24 +13,24 @@ const CreativitySection = () => {
     offset: ["0 1", "1 1"],
   });
   const firstImgY = useTransform(scrollYProgress, [0, 0.15], ["-70%", "0%"]);
-  const firstImgScale = useTransform(scrollYProgress, [0, 0.15], [1.4, 1]);
+  const firstImgScale = useTransform(scrollYProgress, [0, 0.15], [1.4, 1.1]);
   const firstImgOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
 
   const secondImgY = useTransform(scrollYProgress, [0.2, 0.35], ["120%", "0%"]);
-  const secondImgScale = useTransform(scrollYProgress, [0.2, 0.35], [1.4, 1]);
+  const secondImgScale = useTransform(scrollYProgress, [0.2, 0.35], [1.4, 1.1]);
   const secondImgOpacity = useTransform(scrollYProgress, [0.2, 0.35], [0, 1]);
 
   const thirdImgY = useTransform(scrollYProgress, [0.4, 0.55], ["120%", "0%"]);
-  const thirdImgScale = useTransform(scrollYProgress, [0.4, 0.55], [1.4, 1]);
+  const thirdImgScale = useTransform(scrollYProgress, [0.4, 0.55], [1.4, 1.1]);
   const thirdImgOpacity = useTransform(scrollYProgress, [0.4, 0.55], [0, 1]);
 
   const fourthImgY = useTransform(scrollYProgress, [0.6, 0.75], ["120%", "0%"]);
-  const fourthImgScale = useTransform(scrollYProgress, [0.6, 0.75], [1.4, 1]);
+  const fourthImgScale = useTransform(scrollYProgress, [0.6, 0.75], [1.4, 1.1]);
   const fourthImgOpacity = useTransform(scrollYProgress, [0.6, 0.75], [0, 1]);
 
   return (
     <section ref={ref} className="container section_padding">
-      <div className="h-[1000vh] lg:py-40 xl:py-80">
+      <div className="h-[150vh] md:h-[1000vh] lg:py-40 xl:py-80">
         <div className="sticky mx-auto w-[77%] md:w-3/4 top-[40vh] md:top-[55vh] lg:top-[40vh] xl:top-[20vh]">
           <motion.div
             style={{
