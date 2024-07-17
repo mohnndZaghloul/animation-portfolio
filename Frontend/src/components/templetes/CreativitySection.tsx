@@ -30,7 +30,7 @@ const CreativitySection = () => {
 
   return (
     <section ref={ref} className="container section_padding">
-      <div className="h-[400vh] md:h-[1000vh] lg:py-40 xl:py-80">
+      <div className="h-[800vh] md:h-[1000vh] lg:py-40 xl:py-80">
         <div className="sticky mx-auto w-[77%] md:w-3/4 top-[40vh] md:top-[55vh] lg:top-[40vh] xl:top-[20vh]">
           <motion.div
             style={{

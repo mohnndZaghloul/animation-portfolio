@@ -10,10 +10,10 @@ const SoftwareSection = () => {
     offset: ["0 1", "1 1"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.4, 1]);
-  const borderRadius = useTransform(scrollYProgress, [0, 0.5], ["50%", "0%"]);
+  const scale = useTransform(scrollYProgress, [0, 0.6], [0.4, 1]);
+  const borderRadius = useTransform(scrollYProgress, [0, 0.6], ["50%", "0%"]);
   return (
-    <section className="h-[50vh] md:h-[300vh] container" ref={ref}>
+    <section className="h-[60vh] md:h-[300vh] container" ref={ref}>
       <motion.img
         style={{ scale, borderRadius }}
         className="w-full sticky top-1/3 md:top-0 overflow-hidden"

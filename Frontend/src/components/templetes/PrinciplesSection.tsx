@@ -14,22 +14,22 @@ const PrinciplesSection = () => {
   const pargraphY = useTransform(scrollYProgress, [0, 0.28], [150, 0]);
   const headerOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
-  const li1X = useTransform(scrollYProgress, [0.28, 0.45], [-100, 50]);
+  const li1X = useTransform(scrollYProgress, [0.28, 0.45], [-10, 50]);
   const li1Opacity = useTransform(scrollYProgress, [0.28, 0.45], [0, 1]);
 
-  const li2X = useTransform(scrollYProgress, [0.46, 0.55], [100, -50]);
+  const li2X = useTransform(scrollYProgress, [0.46, 0.55], [10, -50]);
   const li2Opacity = useTransform(scrollYProgress, [0.46, 0.55], [0, 1]);
 
-  const li3X = useTransform(scrollYProgress, [0.56, 0.65], [-100, 50]);
+  const li3X = useTransform(scrollYProgress, [0.56, 0.65], [-10, 50]);
   const li3Opacity = useTransform(scrollYProgress, [0.56, 0.65], [0, 1]);
 
-  const li4X = useTransform(scrollYProgress, [0.66, 0.75], [100, -50]);
+  const li4X = useTransform(scrollYProgress, [0.66, 0.75], [10, -50]);
   const li4Opacity = useTransform(scrollYProgress, [0.66, 0.75], [0, 1]);
 
-  const li5X = useTransform(scrollYProgress, [0.76, 0.85], [-100, 50]);
+  const li5X = useTransform(scrollYProgress, [0.76, 0.85], [-10, 50]);
   const li5Opacity = useTransform(scrollYProgress, [0.76, 0.85], [0, 1]);
 
-  const li6X = useTransform(scrollYProgress, [0.86, 1], [100, -50]);
+  const li6X = useTransform(scrollYProgress, [0.86, 1], [10, -50]);
   const li6Opacity = useTransform(scrollYProgress, [0.86, 1], [0, 1]);
 
   return (
@@ -46,7 +46,7 @@ const PrinciplesSection = () => {
         className="text-2xl lg:text-4xl text-grayText pt-4">
         saving so much more ...
       </motion.p>
-      <ul className="space-y-8 md:space-y-24 lg:space-y-32 py-20">
+      <ul className="space-y-10 md:space-y-24 lg:space-y-32 py-20">
         <motion.li
           style={{ x: li1X, opacity: li1Opacity }}
           className="moving_li">
