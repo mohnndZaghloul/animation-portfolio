@@ -1,5 +1,5 @@
 import { useScroll, useTransform } from "framer-motion";
-import video from "../../assets/pic for page 7.mp4";
+import img1 from "../../assets/pic for page 7.jpg";
 import img2 from "../../assets/heroIMG2.jpg";
 import { useRef } from "react";
 import { motion } from "framer-motion";
@@ -23,7 +23,7 @@ const SecondSection = () => {
 
   return (
     <section ref={ref} className="container py-40">
-      <div className="lg:h-[250vh]">
+      <div className="h-[100vh] lg:h-[250vh]">
         <div className="sticky top-[30vh] md:top-[15vh]">
           <div className="flex justify-between lg:px-4 relative">
             <div className="w-3/4 md:w-[40%] relative overflow-hidden -translate-y-20">
@@ -34,11 +34,12 @@ const SecondSection = () => {
               />
             </div>
             <div className="w-3/4 md:w-1/3 relative overflow-hidden mt-auto translate-y-14">
-              <video className="w-full h-full" autoPlay muted loop>
+              <img className="w-full h-full" src={img1} alt="image 2" />
+              {/* <video className="w-full h-full" autoPlay muted loop>
                 <source src={video} type="video/mp4" />
                 <source src={video} type="video/ogg" />
                 Your browser does not support the video tag.
-              </video>
+              </video> */}
               <motion.div
                 style={{ x: translateXRev }}
                 className="absolute top-0 left-0 w-full h-full bg-black"
