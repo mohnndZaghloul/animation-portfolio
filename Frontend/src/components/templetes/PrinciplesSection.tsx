@@ -35,7 +35,7 @@ const PrinciplesSection = () => {
   return (
     <section
       ref={ref}
-      className="container overflow-hidden text-center capitalize pt-16 md:py-40">
+      className="container overflow-hidden text-center capitalize pt-20 md:py-40">
       <motion.h1
         style={{ y: headerY, opacity: headerOpacity }}
         className="text-xl lg:text-3xl font-semibold">
@@ -46,7 +46,7 @@ const PrinciplesSection = () => {
         className="text-2xl lg:text-4xl text-grayText pt-4">
         saving so much more ...
       </motion.p>
-      <ul className="space-y-10 md:space-y-24 lg:space-y-32 py-20">
+      <ul className="space-y-10 md:space-y-24 lg:space-y-32 py-24">
         <motion.li
           style={{ x: li1X, opacity: li1Opacity }}
           className="moving_li">
