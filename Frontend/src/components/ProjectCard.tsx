@@ -41,6 +41,12 @@ const ProjectCard = ({
         whileInView={{ scale: 1, opacity: 1, transition: { duration: 0.5 } }}
         className="cursor-pointer group rounded-lg overflow-hidden aspect-[4/3]">
         <div className="relative">
+          <motion.div
+            initial={{ x: 800, y: -600, rotate: "45deg" }}
+            animate={{ x: -800, y: 600, rotate: "45deg" }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="absolute top-1/2 left-1/2 bg-white blur-2xl w-[300%] h-2 -z-10"
+          />
           {images?.[0].mimetype.includes("video") ? (
             <video
               className="w-full h-full aspect-[4/3] object-cover group-hover:scale-110 transition duration-300"

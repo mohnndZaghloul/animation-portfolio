@@ -12,6 +12,12 @@ const Courses = () => {
       </div> */}
       <Shadow isRed positionY="-bottom-1/3 translate-y-1/2" />
       <Shadow positionY="-bottom-1/3 translate-y-1/2" />
+      <div
+        className={`absolute -bottom-1/3 translate-y-1/2 right-0 blur-[14rem]  w-[26rem] h-[26rem] bg-Secondary rounded-full z-40`}
+      />
+      <div
+        className={`absolute -bottom-1/3 translate-y-1/2 right-0 blur-[25rem]  w-[58rem] h-[30rem] bg-primary rounded-full z-40`}
+      />
     </main>
   );
 };
